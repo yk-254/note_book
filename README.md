@@ -1,16 +1,50 @@
-# note_book
+# Note App (Clean Architecture + GetX)
 
-A new Flutter project.
+## Overview
+این پروژه یک اپلیکیشن مدیریت یادداشت ساده است که از معماری **Clean Architecture** استفاده می‌کند و **GetX** را برای مدیریت حالت و مسیریابی به کار می‌برد. ذخیره‌سازی محلی با استفاده از **GetStorage** انجام شده تا نیاز به تنظیم پایگاه‌داده بومی (مثل Hive یا SQLite) کاهش یابد.
 
-## Getting Started
+## Features
+- CRUD کامل برای یادداشت‌ها (Create/Read/Update/Delete)
+- دسته‌بندی یادداشت‌ها
+- وضعیت یادداشت (draft, completed)
+- فیلتر بر اساس دسته و وضعیت
+- پیاده‌سازی Clean Architecture (presentation, domain, data)
+- تست‌های پایه (stubs) برای شروع
 
-This project is a starting point for a Flutter application.
+## Structure (خلاصه)
+```
+lib/
+  core/
+  data/
+  domain/
+  presentation/
+  main.dart
+test/
+README.md
+pubspec.yaml
+```
 
-A few resources to get you started if this is your first Flutter project:
+## How to run
+1. Flutter SDK را نصب کنید.
+2. پروژه را در دستگاه محلی clone کنید یا فایل‌های این فولدر را در یک پروژه جدید قرار دهید.
+3. وابستگی‌ها را نصب کنید:
+```bash
+flutter pub get
+```
+4. اپلیکیشن را اجرا کنید:
+```bash
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+> توجه: GetStorage در اولین اجرا نیاز دارد که `await GetStorage.init()` در `main()` فراخوانی شود. این در `main.dart` آماده شده است.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Notes on architecture
+- `domain/` شامل entities و repository interfaces و usecases است.
+- `data/` شامل پیاده‌سازی repository (GetStorage-based) و mapper ها است.
+- `presentation/` شامل GetX Controllers, Pages و Bindings است.
+
+## Tests
+در فولدر `test/` فایل‌های تست اولیه قرار دارند. می‌توانید از mocktail برای mock کردن repository استفاده کرده و تست‌های unit برای controller و usecases بنویسید.
+
+---
+اگر می‌خواهی من این پروژه را کامل‌تر (با CI, APK build, یا پیاده‌سازی Hive/Drift و تست‌های کامل) بسازم، بگو تا ادامه بدم.
