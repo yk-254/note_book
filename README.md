@@ -69,8 +69,6 @@ Architecture	Clean Architecture
 Testing	Flutter Test + Mocktail
 📦 Installation & Setup
 1. Clone the repository
-git clone https://github.com/your-username/note-management-app.git
-cd note-management-app
 
 2. Install dependencies
 flutter pub get
