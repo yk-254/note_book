@@ -43,8 +43,7 @@ flutter run
 - `data/` شامل پیاده‌سازی repository (GetStorage-based) و mapper ها است.
 - `presentation/` شامل GetX Controllers, Pages و Bindings است.
 
-## Tests
-در فولدر `test/` فایل‌های تست اولیه قرار دارند. می‌توانید از mocktail برای mock کردن repository استفاده کرده و تست‌های unit برای controller و usecases بنویسید.
+.
 
 ---
-اگر می‌خواهی من این پروژه را کامل‌تر (با CI, APK build, یا پیاده‌سازی Hive/Drift و تست‌های کامل) بسازم، بگو تا ادامه بدم.
+.
